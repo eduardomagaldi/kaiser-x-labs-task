@@ -1,0 +1,12 @@
+<div class="wrapper-input">
+	<input
+		class="input-add-task"
+		type="text"
+		placeholder="Add your task here..."
+		(keyup)="onKey($event)"
+		[(ngModel)]="text"
+		appAutoFocus
+		>
+
+	<i class="icon">&crarr;</i>
+</div>

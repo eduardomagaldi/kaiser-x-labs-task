@@ -1,0 +1,126 @@
+@keyframes bounce {
+  0% { transform: scale(1); }
+  0% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+.wrapper-task {
+	display: flex;
+	cursor: pointer;
+	outline: none;
+	animation: bounce .1s; /* IE 10+, Fx 29+ */
+
+	&:hover,
+	&:focus,
+	&:active {
+		.wrapper-custom-checkbox {
+			border: 0;
+
+			.custom-checkbox {
+				border: 2px solid #555555;
+				box-shadow: 0 0 14px #000;
+				margin-top: 0;
+				margin-left: 0;
+			}
+		}
+
+		.text {
+			font-weight: bold;
+		}
+
+		.wrapper-icon-delete {
+			opacity: 1;
+		}
+	}
+
+	&.checked .wrapper-custom-checkbox {
+		.custom-checkbox {
+			background-color: #7ED321;
+
+			.img-check {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.checked .text {
+		color: #ABABAB;
+		text-decoration: line-through;
+	}
+
+	&.checked .wrapper-icon-delete {
+		opacity: 1;
+	}
+
+	.wrapper-clickable {
+		display: flex;
+	}
+}
+
+.wrapper-custom-checkbox {
+	width: 24px;
+	height: 24px;
+	margin-right: 11px;
+}
+
+.icon {
+	font-style: normal;
+}
+
+$animation-time: .3s;
+
+.custom-checkbox {
+	width: 22px;
+	height: 22px;
+	background-color: #F2F2F2;
+	border: 1px solid #CFCFCF;
+	border-radius: 50%;
+	margin-left: 1px;
+	margin-top: 1px;
+	overflow: hidden;
+	transition: border $animation-time,
+				box-shadow $animation-time,
+				margin $animation-time,
+				background-color $animation-time,
+				box-shadow $animation-time;
+
+	.img-check {
+		opacity: 0;
+		transition: opacity $animation-time;
+		width: 14px;
+		height: 14px;
+		margin-top: 4px;
+		margin-left: 4px;
+	}
+}
+
+.text {
+	margin-top: 4px;
+	display: block;
+	max-width: 200px;
+	overflow: hidden;
+}
+
+.wrapper-icon-delete {
+	position: relative;
+    overflow: hidden;
+    width: 14px;
+	height: 14px;
+	margin-top: 5px;
+	margin-left: 11px;
+	opacity: 0;
+	transition: all .3s ease-in-out;
+
+	.icon-delete {
+		display: block;
+		font-size: 28px;
+		position: absolute;
+		color: #c20000;
+		top: -7px;
+		left: -2px;
+	}
+
+	&:hover {
+		transform: scale(1.2);
+	}
+}

@@ -1,0 +1,112 @@
+.wrapper-overview {
+	width: 300px;
+	margin: 77px auto 0;
+}
+
+.wrapper-tasks {
+	margin: 32px 20px 100px;
+	text-align: left;
+	padding: 0;
+
+	.list-item {
+		display: flex;
+		margin-bottom: 32px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.modal-backdrop {
+	background: rgba(0, 0, 0, .5);
+	width: 100%;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	opacity: 0;
+	transition: opacity .3s;
+	transition-delay: .1s;
+	height: 0;
+
+	&.open {
+		opacity: 1;
+		height: 100%;
+	}
+
+	&.closed {
+		height: 0;
+	}
+}
+
+.modal-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity .3s;
+	transition-delay: .1s;
+	opacity: 0;
+	height: 0;
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	width: 100%;
+	overflow: hidden;
+
+	&.open {
+		opacity: 1;
+		height: 100%;
+	}
+
+	&.closed {
+		height: 0;
+	}
+
+	.modal {
+		background: white;
+		border-radius: 8px;
+		width: 300px;
+		padding: 20px;
+
+		p:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.wrapper-buttons {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 30px;
+
+		.button {
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			background: white;
+			padding: 5px 10px;
+			margin-left: 5px;
+			transition: background-color .3s;
+			cursor: pointer;
+
+			&:first-of-type {
+				margin: 0;
+			}
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: darken(white, 10);
+
+				&.button-delete {
+					background-color: darken(#c20000, 10);
+				}
+			}
+
+			&.button-delete {
+				background: #c20000;
+				color: white;
+				border-color: #c20000;
+			}
+		}
+	}
+}

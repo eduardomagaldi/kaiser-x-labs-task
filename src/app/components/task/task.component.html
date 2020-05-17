@@ -1,0 +1,20 @@
+<div
+	class="wrapper-task"
+	[ngClass]="{'checked': task.status === 'done'}"
+	tabindex="0"
+	(keyup)="onKey($event)"
+	>
+	<div class="wrapper-clickable" (click)="onTaskClick()">
+		<div class="wrapper-custom-checkbox">
+			<div class="custom-checkbox">
+				<img class="img-check" src="assets/img/checkmark.svg" />
+			</div>
+		</div>
+
+		<span class="text">{{ task.text }}</span>
+	</div>
+
+	<div class="wrapper-icon-delete" (click)="deleteTask(task)" appClickStopPropagation>
+		<i class="icon icon-delete">&times;</i>
+	</div>
+</div>
